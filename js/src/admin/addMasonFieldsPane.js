@@ -6,21 +6,21 @@ import MasonFieldsPane from './panes/MasonFieldsPane';
 
 export default function () {
     // create the route
-    app.routes['flagrow-mason-fields'] = {
-        path: '/flagrow/mason',
+    app.routes['huydeerpets-mason-fields'] = {
+        path: '/huydeerpets/mason',
         component: MasonFieldsPane.component(),
     };
 
     // bind the route we created to the three dots settings button
-    app.extensionSettings['flagrow-mason'] = () => m.route(app.route('flagrow-mason-fields'));
+    app.extensionSettings['huydeerpets-mason'] = () => m.route(app.route('huydeerpets-mason-fields'));
 
     extend(AdminNav.prototype, 'items', items => {
         // add the Image Upload tab to the admin navigation menu
-        items.add('flagrow-mason-fields', AdminLinkButton.component({
-            href: app.route('flagrow-mason-fields'),
+        items.add('huydeerpets-mason-fields', AdminLinkButton.component({
+            href: app.route('huydeerpets-mason-fields'),
             icon: 'fas fa-dungeon',
             children: 'Mason',
-            description: app.translator.trans('flagrow-mason.admin.menu.description'),
+            description: app.translator.trans('huydeerpets-mason.admin.menu.description'),
         }));
     });
 }

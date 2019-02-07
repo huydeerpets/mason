@@ -4,9 +4,9 @@ import Field from './../lib/models/Field';
 import addMasonFieldsPane from './addMasonFieldsPane';
 import addPermissions from './addPermissions';
 
-app.initializers.add('flagrow-mason', app => {
-    app.store.models['flagrow-mason-field'] = Field;
-    app.store.models['flagrow-mason-answer'] = Answer;
+app.initializers.add('huydeerpets-mason', app => {
+    app.store.models['huydeerpets-mason-field'] = Field;
+    app.store.models['huydeerpets-mason-answer'] = Answer;
 
     addMasonFieldsPane();
     addPermissions();

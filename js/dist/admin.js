@@ -144,22 +144,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   // create the route
-  flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.routes['flagrow-mason-fields'] = {
-    path: '/flagrow/mason',
+  flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.routes['huydeerpets-mason-fields'] = {
+    path: '/huydeerpets/mason',
     component: _panes_MasonFieldsPane__WEBPACK_IMPORTED_MODULE_4__["default"].component()
   }; // bind the route we created to the three dots settings button
 
-  flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.extensionSettings['flagrow-mason'] = function () {
-    return m.route(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.route('flagrow-mason-fields'));
+  flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.extensionSettings['huydeerpets-mason'] = function () {
+    return m.route(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.route('huydeerpets-mason-fields'));
   };
 
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_AdminNav__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'items', function (items) {
     // add the Image Upload tab to the admin navigation menu
-    items.add('flagrow-mason-fields', flarum_components_AdminLinkButton__WEBPACK_IMPORTED_MODULE_3___default.a.component({
-      href: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.route('flagrow-mason-fields'),
+    items.add('huydeerpets-mason-fields', flarum_components_AdminLinkButton__WEBPACK_IMPORTED_MODULE_3___default.a.component({
+      href: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.route('huydeerpets-mason-fields'),
       icon: 'fas fa-dungeon',
       children: 'Mason',
-      description: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.menu.description')
+      description: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.menu.description')
     }));
   });
 });
@@ -186,25 +186,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'viewItems', function (items) {
-    items.add('flagrow-mason-update-own-fields', {
+    items.add('huydeerpets-mason-update-own-fields', {
       icon: 'fas fa-dungeon',
-      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.permissions.update-own-fields'),
-      permission: 'flagrow.mason.update-own-fields'
+      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.permissions.update-own-fields'),
+      permission: 'huydeerpets.mason.update-own-fields'
     });
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'viewItems', function (items) {
-    items.add('flagrow-mason-update-other-fields', {
+    items.add('huydeerpets-mason-update-other-fields', {
       icon: 'fas fa-dungeon',
-      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.permissions.update-other-fields'),
-      permission: 'flagrow.mason.update-other-fields',
+      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.permissions.update-other-fields'),
+      permission: 'huydeerpets.mason.update-other-fields',
       allowGuest: true
     });
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'viewItems', function (items) {
-    items.add('flagrow-mason-skip-required-fields', {
+    items.add('huydeerpets-mason-skip-required-fields', {
       icon: 'fas fa-dungeon',
-      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.permissions.skip-required-fields'),
-      permission: 'flagrow.mason.skip-required-fields'
+      label: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.permissions.skip-required-fields'),
+      permission: 'huydeerpets.mason.skip-required-fields'
     });
   });
 });
@@ -277,18 +277,18 @@ function (_Component) {
 
         _this.saveAnswer();
       },
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.is_suggested')
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.is_suggested')
     }), m('.ButtonGroup', [flarum_components_Button__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       type: 'submit',
       className: 'Button Button--primary',
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.save-answer'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.save-answer'),
       loading: this.processing,
       disabled: !this.readyToSave(),
       onclick: this.saveAnswer.bind(this)
     }), flarum_components_Button__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       type: 'submit',
       className: 'Button Button--danger',
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.delete-answer'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.delete-answer'),
       loading: this.processing,
       onclick: this.deleteAnswer.bind(this)
     })])]);
@@ -322,7 +322,7 @@ function (_Component) {
   _proto.deleteAnswer = function deleteAnswer() {
     var _this3 = this;
 
-    if (!confirm(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.messages.delete-answer-confirmation', {
+    if (!confirm(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.messages.delete-answer-confirmation', {
       content: this.answer.content()
     }))) {
       return;
@@ -410,7 +410,7 @@ function (_Component) {
     var _this2 = this;
 
     if (!this.field.exists) {
-      return m('div', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.save-field-for-answers'));
+      return m('div', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.save-field-for-answers'));
     }
 
     var suggestedAnswers = [];
@@ -439,7 +439,7 @@ function (_Component) {
       onclick: function onclick() {
         _this2.showUserAnswers = !_this2.showUserAnswers;
       }
-    }, [m('.Mason-Box-Header-Title', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.show-user-answers', {
+    }, [m('.Mason-Box-Header-Title', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.show-user-answers', {
       count: userAnswers.length
     })), m('div', [flarum_helpers_icon__WEBPACK_IMPORTED_MODULE_2___default()('fas fa-chevron-' + (this.showUserAnswers ? 'up' : 'down'))])]), // The list of user answers can't be re-ordered
     this.showUserAnswers ? m('.Mason-Container', Object(_lib_helpers_sortByAttribute__WEBPACK_IMPORTED_MODULE_6__["default"])(userAnswers, 'content').map(function (answer) {
@@ -453,11 +453,11 @@ function (_Component) {
       oninput: m.withAttr('value', function (value) {
         _this2.new_content = value;
       }),
-      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.new-answer-placeholder')
+      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.new-answer-placeholder')
     })]), m('.Form-group', [flarum_components_Button__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       type: 'submit',
       className: 'Button Button--primary',
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.add-answer'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.add-answer'),
       loading: this.processing,
       disabled: !this.new_content,
       onclick: this.saveField.bind(this)
@@ -561,7 +561,7 @@ function (_Component) {
   };
 
   _proto.initNewField = function initNewField() {
-    this.field = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.store.createRecord('flagrow-mason-field', {
+    this.field = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.store.createRecord('huydeerpets-mason-field', {
       attributes: {
         name: '',
         description: '',
@@ -580,7 +580,7 @@ function (_Component) {
       return this.field.name();
     }
 
-    return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.new-field');
+    return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.new-field');
   };
 
   _proto.view = function view() {
@@ -590,28 +590,28 @@ function (_Component) {
       onclick: function onclick() {
         _this.toggleFields = !_this.toggleFields;
       }
-    }, [m('.Mason-Box-Header-Title', this.boxTitle()), m('div', [this.field.exists ? [flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.edit-field'), ' '] : null, flarum_helpers_icon__WEBPACK_IMPORTED_MODULE_2___default()('fas fa-chevron-' + (this.toggleFields ? 'up' : 'down'))])]), this.toggleFields ? this.viewFields() : null]);
+    }, [m('.Mason-Box-Header-Title', this.boxTitle()), m('div', [this.field.exists ? [flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.edit-field'), ' '] : null, flarum_helpers_icon__WEBPACK_IMPORTED_MODULE_2___default()('fas fa-chevron-' + (this.toggleFields ? 'up' : 'down'))])]), this.toggleFields ? this.viewFields() : null]);
   };
 
   _proto.viewFields = function viewFields() {
     var _this2 = this;
 
-    return m('form', [m('.Mason-Box--row', [m('.Mason-Box--column', [m('h4', 'Field settings'), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.name')), m('input.FormControl', {
+    return m('form', [m('.Mason-Box--row', [m('.Mason-Box--column', [m('h4', 'Field settings'), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.name')), m('input.FormControl', {
       value: this.field.name(),
       oninput: m.withAttr('value', this.updateAttribute.bind(this, 'name'))
-    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.name-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.description')), m('input.FormControl', {
+    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.name-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.description')), m('input.FormControl', {
       value: this.field.description(),
       oninput: m.withAttr('value', this.updateAttribute.bind(this, 'description'))
-    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.description-help'))]), m('.Form-group', [m('label', [// TODO: while multiple answers are still in the work, show the "min answers" field as a checkbox
+    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.description-help'))]), m('.Form-group', [m('label', [// TODO: while multiple answers are still in the work, show the "min answers" field as a checkbox
     flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.field.min_answers_count() === 1,
       onchange: function onchange(value) {
         _this2.updateAttribute('min_answers_count', value ? 1 : 0);
       },
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.required')
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.required')
     })])]),
     /*m('.Form-group', [
-        m('label', app.translator.trans('flagrow-mason.admin.fields.min_answers_count')),
+        m('label', app.translator.trans('huydeerpets-mason.admin.fields.min_answers_count')),
         m('input.FormControl', {
             type: 'number',
             min: 0,
@@ -621,7 +621,7 @@ function (_Component) {
         }),
     ]),
     m('.Form-group', [
-        m('label', app.translator.trans('flagrow-mason.admin.fields.max_answers_count')),
+        m('label', app.translator.trans('huydeerpets-mason.admin.fields.max_answers_count')),
         m('input.FormControl', {
             type: 'number',
             min: 1,
@@ -633,36 +633,36 @@ function (_Component) {
     m('.Form-group', [m('label', [flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.field.show_when_empty(),
       onchange: this.updateAttribute.bind(this, 'show_when_empty'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.show_when_empty')
-    })]), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.show_when_empty-help'))]), m('.Form-group', [m('label', [flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.show_when_empty')
+    })]), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.show_when_empty-help'))]), m('.Form-group', [m('label', [flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.field.user_values_allowed(),
       onchange: this.updateAttribute.bind(this, 'user_values_allowed'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.user_values_allowed')
-    })]), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.user_values_allowed-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.validation')), m('input.FormControl', {
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.user_values_allowed')
+    })]), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.user_values_allowed-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.validation')), m('input.FormControl', {
       disabled: !this.field.user_values_allowed(),
-      placeholder: this.field.user_values_allowed() ? '' : flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.enable-user-values-for-validation'),
+      placeholder: this.field.user_values_allowed() ? '' : flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.enable-user-values-for-validation'),
       value: this.field.validation(),
       oninput: m.withAttr('value', this.updateAttribute.bind(this, 'validation'))
-    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.validation-help', {
+    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.validation-help', {
       a: m('a[href=https://laravel.com/docs/5.1/validation#available-validation-rules][_target=blank]')
-    }))]), m('.Form-group', [m('label', [flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.icon'), this.iconPreview(this.field.icon())]), m('input.FormControl', {
+    }))]), m('.Form-group', [m('label', [flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.icon'), this.iconPreview(this.field.icon())]), m('input.FormControl', {
       value: this.field.icon(),
       oninput: m.withAttr('value', this.updateAttribute.bind(this, 'icon'))
-    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.icon-help', {
+    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.icon-help', {
       a: m('a[href=https://fontawesome.com/icons?m=free][_target=blank]')
     }))])]), m('.Mason-Box--column', [m('h4', 'Field answers'), m('.Form-group', _FieldAnswersEdit__WEBPACK_IMPORTED_MODULE_6__["default"].component({
       field: this.field
     }))])]), m('li.ButtonGroup', [flarum_components_Button__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       type: 'submit',
       className: 'Button Button--primary',
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.' + (this.field.exists ? 'save' : 'add') + '-field'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.' + (this.field.exists ? 'save' : 'add') + '-field'),
       loading: this.processing,
       disabled: !this.readyToSave(),
       onclick: this.saveField.bind(this)
     }), this.field.exists ? flarum_components_Button__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       type: 'submit',
       className: 'Button Button--danger',
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.buttons.delete-field'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.buttons.delete-field'),
       loading: this.processing,
       onclick: this.deleteField.bind(this)
     }) : ''])]);
@@ -704,7 +704,7 @@ function (_Component) {
   _proto.deleteField = function deleteField() {
     var _this4 = this;
 
-    if (!confirm(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.messages.delete-field-confirmation', {
+    if (!confirm(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.messages.delete-field-confirmation', {
       name: this.field.name()
     }))) {
       return;
@@ -725,7 +725,7 @@ function (_Component) {
       return '';
     }
 
-    return [' (', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.fields.icon-preview', {
+    return [' (', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.fields.icon-preview', {
       preview: flarum_helpers_icon__WEBPACK_IMPORTED_MODULE_2___default()(value)
     }), ')'];
   };
@@ -777,51 +777,51 @@ function (_Component) {
   var _proto = MasonSettings.prototype;
 
   _proto.init = function init() {
-    this.fieldsSectionTitle = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.fields-section-title'] || '');
-    this.columnCount = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.column-count'] || 1);
-    this.labelsAsPlaceholders = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.labels-as-placeholders'] > 0);
-    this.fieldsInHero = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.fields-in-hero'] > 0);
-    this.hideEmptyFieldsSection = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.hide-empty-fields-section'] > 0);
-    this.tagsAsFields = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.tags-as-fields'] > 0);
-    this.tagsFieldName = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['flagrow.mason.tags-field-name'] || '');
+    this.fieldsSectionTitle = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.fields-section-title'] || '');
+    this.columnCount = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.column-count'] || 1);
+    this.labelsAsPlaceholders = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.labels-as-placeholders'] > 0);
+    this.fieldsInHero = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.fields-in-hero'] > 0);
+    this.hideEmptyFieldsSection = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.hide-empty-fields-section'] > 0);
+    this.tagsAsFields = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.tags-as-fields'] > 0);
+    this.tagsFieldName = m.prop(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings['huydeerpets.mason.tags-field-name'] || '');
     this.columnOptions = {};
 
     for (var i = 1; i <= 3; i++) {
-      this.columnOptions[i] = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.n-columns', {
+      this.columnOptions[i] = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.n-columns', {
         count: i
       });
     }
   };
 
   _proto.view = function view() {
-    return m('.Mason-Container', [m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.fields-section-title')), m('input.FormControl', {
+    return m('.Mason-Container', [m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.fields-section-title')), m('input.FormControl', {
       value: this.fieldsSectionTitle(),
-      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.fields-section-title-placeholder'),
-      onchange: m.withAttr('value', this.updateSetting.bind(this, this.fieldsSectionTitle, 'flagrow.mason.fields-section-title'))
-    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.fields-section-title-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.column-count')), flarum_components_Select__WEBPACK_IMPORTED_MODULE_4___default.a.component({
+      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.fields-section-title-placeholder'),
+      onchange: m.withAttr('value', this.updateSetting.bind(this, this.fieldsSectionTitle, 'huydeerpets.mason.fields-section-title'))
+    }), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.fields-section-title-help'))]), m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.column-count')), flarum_components_Select__WEBPACK_IMPORTED_MODULE_4___default.a.component({
       options: this.columnOptions,
       value: this.columnCount(),
-      onchange: this.updateSetting.bind(this, this.columnCount, 'flagrow.mason.column-count')
+      onchange: this.updateSetting.bind(this, this.columnCount, 'huydeerpets.mason.column-count')
     })]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.labelsAsPlaceholders(),
-      onchange: this.updateSetting.bind(this, this.labelsAsPlaceholders, 'flagrow.mason.labels-as-placeholders'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.labels-as-placeholders')
-    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.labels-as-placeholders-help'))]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
+      onchange: this.updateSetting.bind(this, this.labelsAsPlaceholders, 'huydeerpets.mason.labels-as-placeholders'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.labels-as-placeholders')
+    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.labels-as-placeholders-help'))]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.fieldsInHero(),
-      onchange: this.updateSetting.bind(this, this.fieldsInHero, 'flagrow.mason.fields-in-hero'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.fields-in-hero')
+      onchange: this.updateSetting.bind(this, this.fieldsInHero, 'huydeerpets.mason.fields-in-hero'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.fields-in-hero')
     }))]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.hideEmptyFieldsSection(),
-      onchange: this.updateSetting.bind(this, this.hideEmptyFieldsSection, 'flagrow.mason.hide-empty-fields-section'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.hide-empty-fields-section')
-    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.hide-empty-fields-section-help'))]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
+      onchange: this.updateSetting.bind(this, this.hideEmptyFieldsSection, 'huydeerpets.mason.hide-empty-fields-section'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.hide-empty-fields-section')
+    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.hide-empty-fields-section-help'))]), m('.Form-group', [m('label', flarum_components_Switch__WEBPACK_IMPORTED_MODULE_5___default.a.component({
       state: this.tagsAsFields(),
-      onchange: this.updateSetting.bind(this, this.tagsAsFields, 'flagrow.mason.tags-as-fields'),
-      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.tags-as-field')
-    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.tags-as-field-help'))]), this.tagsAsFields() ? m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.tags-field-name')), m('input.FormControl', {
+      onchange: this.updateSetting.bind(this, this.tagsAsFields, 'huydeerpets.mason.tags-as-fields'),
+      children: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.tags-as-field')
+    })), m('.helpText', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.tags-as-field-help'))]), this.tagsAsFields() ? m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.tags-field-name')), m('input.FormControl', {
       value: this.tagsFieldName(),
-      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.settings.tags-field-name-placeholder'),
-      onchange: m.withAttr('value', this.updateSetting.bind(this, this.tagsFieldName, 'flagrow.mason.tags-field-name'))
+      placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.settings.tags-field-name-placeholder'),
+      onchange: m.withAttr('value', this.updateSetting.bind(this, this.tagsFieldName, 'huydeerpets.mason.tags-field-name'))
     })]) : null]);
   };
   /**
@@ -866,9 +866,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('flagrow-mason', function (app) {
-  app.store.models['flagrow-mason-field'] = _lib_models_Field__WEBPACK_IMPORTED_MODULE_2__["default"];
-  app.store.models['flagrow-mason-answer'] = _lib_models_Answer__WEBPACK_IMPORTED_MODULE_1__["default"];
+flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('huydeerpets-mason', function (app) {
+  app.store.models['huydeerpets-mason-field'] = _lib_models_Field__WEBPACK_IMPORTED_MODULE_2__["default"];
+  app.store.models['huydeerpets-mason-answer'] = _lib_models_Answer__WEBPACK_IMPORTED_MODULE_1__["default"];
   Object(_addMasonFieldsPane__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_addPermissions__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
@@ -914,7 +914,7 @@ function (_Component) {
   _proto.init = function init() {
     flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.request({
       method: 'GET',
-      url: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('apiUrl') + '/flagrow/mason/fields'
+      url: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('apiUrl') + '/huydeerpets/mason/fields'
     }).then(function (result) {
       flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.store.pushPayload(result);
       m.redraw();
@@ -936,7 +936,7 @@ function (_Component) {
   };
 
   _proto.view = function view() {
-    var fields = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.store.all('flagrow-mason-field');
+    var fields = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.store.all('huydeerpets-mason-field');
     var fieldsList = [];
     Object(_lib_helpers_sortByAttribute__WEBPACK_IMPORTED_MODULE_4__["default"])(fields).forEach(function (field) {
       // Build array of fields to show.
@@ -947,16 +947,16 @@ function (_Component) {
         field: field
       })));
     });
-    return m('.container', [m('h2', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.titles.fields')), m('.Mason-Container', [m('.js-fields-container', fieldsList), _components_FieldEdit__WEBPACK_IMPORTED_MODULE_3__["default"].component({
+    return m('.container', [m('h2', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.titles.fields')), m('.Mason-Container', [m('.js-fields-container', fieldsList), _components_FieldEdit__WEBPACK_IMPORTED_MODULE_3__["default"].component({
       key: 'new',
       field: null
-    })]), m('h2', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('flagrow-mason.admin.titles.settings')), _components_MasonSettings__WEBPACK_IMPORTED_MODULE_5__["default"].component()]);
+    })]), m('h2', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('huydeerpets-mason.admin.titles.settings')), _components_MasonSettings__WEBPACK_IMPORTED_MODULE_5__["default"].component()]);
   };
 
   _proto.updateSort = function updateSort(sorting) {
     flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.request({
       method: 'POST',
-      url: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('apiUrl') + '/flagrow/mason/fields/order',
+      url: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('apiUrl') + '/huydeerpets/mason/fields/order',
       data: {
         sort: sorting
       }
@@ -1032,7 +1032,7 @@ function (_mixin) {
    * @inheritDoc
    */
   _proto.apiEndpoint = function apiEndpoint() {
-    return '/flagrow/mason/answers' + (this.exists ? '/' + this.data.id : '');
+    return '/huydeerpets/mason/answers' + (this.exists ? '/' + this.data.id : '');
   };
 
   return Answer;
@@ -1087,7 +1087,7 @@ function (_mixin) {
    * @inheritDoc
    */
   _proto.apiEndpoint = function apiEndpoint() {
-    return '/flagrow/mason/fields' + (this.exists ? '/' + this.data.id : '');
+    return '/huydeerpets/mason/fields' + (this.exists ? '/' + this.data.id : '');
   };
 
   return Field;

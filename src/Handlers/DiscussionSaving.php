@@ -1,11 +1,11 @@
 <?php
 
-namespace Flagrow\Mason\Handlers;
+namespace Huydeerpets\Mason\Handlers;
 
-use Flagrow\Mason\Field;
-use Flagrow\Mason\Repositories\AnswerRepository;
-use Flagrow\Mason\Repositories\FieldRepository;
-use Flagrow\Mason\Validators\UserAnswerValidator;
+use Huydeerpets\Mason\Field;
+use Huydeerpets\Mason\Repositories\AnswerRepository;
+use Huydeerpets\Mason\Repositories\FieldRepository;
+use Huydeerpets\Mason\Validators\UserAnswerValidator;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Foundation\ValidationException;
 use Flarum\User\Exception\PermissionDeniedException;
@@ -39,11 +39,11 @@ class DiscussionSaving
         $discussion = $event->discussion;
         $actor = $event->actor;
 
-        $hasAnswersData = isset($event->data['relationships']['flagrowMasonAnswers']['data']);
+        $hasAnswersData = isset($event->data['relationships']['huydeerpetsMasonAnswers']['data']);
 
         if ($discussion->exists) {
             if ($hasAnswersData) {
-                if (!$actor->can('updateFlagrowMasonAnswers', $discussion)) {
+                if (!$actor->can('updateHuydeerpetsMasonAnswers', $discussion)) {
                     throw new PermissionDeniedException;
                 }
             } else {
@@ -56,7 +56,7 @@ class DiscussionSaving
         $newAnswerIds = [];
         $answersPerField = [];
 
-        $answerRelations = $hasAnswersData ? $event->data['relationships']['flagrowMasonAnswers']['data'] : [];
+        $answerRelations = $hasAnswersData ? $event->data['relationships']['huydeerpetsMasonAnswers']['data'] : [];
 
         foreach ($answerRelations as $answerRelation) {
             $answer = null;
@@ -107,7 +107,7 @@ class DiscussionSaving
         });
 
         $discussion->afterSave(function ($discussion) use ($newAnswerIds) {
-            $discussion->flagrowMasonAnswers()->sync($newAnswerIds);
+            $discussion->huydeerpetsMasonAnswers()->sync($newAnswerIds);
         });
     }
 
@@ -123,7 +123,7 @@ class DiscussionSaving
         );
 
         if ($validator->fails()) {
-            throw new ValidationException([], ['flagrowMasonAnswers' => $validator->getMessageBag()->first($key)]);
+            throw new ValidationException([], ['huydeerpetsMasonAnswers' => $validator->getMessageBag()->first($key)]);
         }
     }
 }

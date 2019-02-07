@@ -12,6 +12,6 @@ export default class Answer extends mixin(Model, {
      * @inheritDoc
      */
     apiEndpoint() {
-        return '/flagrow/mason/answers' + (this.exists ? '/' + this.data.id : '');
+        return '/huydeerpets/mason/answers' + (this.exists ? '/' + this.data.id : '');
     }
 }

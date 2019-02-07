@@ -6,7 +6,7 @@ import FieldsViewer from './components/FieldsViewer';
 function showFieldsOnPost(post) {
     // We only add fields to the first post, and only if fields are not displayed in the hero
     // TODO: what if the first post is deleted ?
-    return post.number() === 1 && !app.forum.attribute('flagrow.mason.fields-in-hero');
+    return post.number() === 1 && !app.forum.attribute('huydeerpets.mason.fields-in-hero');
 }
 
 export default function () {
@@ -16,7 +16,7 @@ export default function () {
                 if (showFieldsOnPost(this.props.post)) {
                     // Create a string with all answer ids
                     // If answers change this string will be different
-                    return this.props.post.discussion().flagrowMasonAnswers().map(answer => answer.id()).join(',');
+                    return this.props.post.discussion().huydeerpetsMasonAnswers().map(answer => answer.id()).join(',');
                 }
 
                 // For other posts we always return the same thing

@@ -5,11 +5,11 @@ import FieldsViewer from './components/FieldsViewer';
 
 export default function () {
     extend(DiscussionHero.prototype, 'items', function (items) {
-        if (!app.forum.attribute('flagrow.mason.fields-in-hero')) {
+        if (!app.forum.attribute('huydeerpets.mason.fields-in-hero')) {
             return;
         }
 
-        items.add('flagrow-mason-fields', FieldsViewer.component({
+        items.add('huydeerpets-mason-fields', FieldsViewer.component({
             discussion: this.props.discussion,
         }));
     });

@@ -1,10 +1,10 @@
 <?php
 
-namespace Flagrow\Mason\Repositories;
+namespace Huydeerpets\Mason\Repositories;
 
-use Flagrow\Mason\Answer;
-use Flagrow\Mason\Field;
-use Flagrow\Mason\Validators\AnswerValidator;
+use Huydeerpets\Mason\Answer;
+use Huydeerpets\Mason\Field;
+use Huydeerpets\Mason\Validators\AnswerValidator;
 
 class AnswerRepository
 {

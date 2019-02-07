@@ -1,10 +1,10 @@
 <?php
 
-namespace Flagrow\Mason\Extend;
+namespace Huydeerpets\Mason\Extend;
 
-use Flagrow\Mason\Answer;
-use Flagrow\Mason\Api\Serializers\AnswerSerializer;
-use Flagrow\Mason\Handlers\DiscussionSaving;
+use Huydeerpets\Mason\Answer;
+use Huydeerpets\Mason\Api\Serializers\AnswerSerializer;
+use Huydeerpets\Mason\Handlers\DiscussionSaving;
 use Flarum\Api\Controller\CreateDiscussionController;
 use Flarum\Api\Controller\ListDiscussionsController;
 use Flarum\Api\Controller\ShowDiscussionController;
@@ -33,8 +33,8 @@ class DiscussionAttributes implements ExtenderInterface
 
     public function relationships(GetModelRelationship $event)
     {
-        if ($event->isRelationship(Discussion::class, 'flagrowMasonAnswers')) {
-            return $event->model->belongsToMany(Answer::class, 'flagrow_mason_discussion_answer', 'discussion_id', 'answer_id')
+        if ($event->isRelationship(Discussion::class, 'huydeerpetsMasonAnswers')) {
+            return $event->model->belongsToMany(Answer::class, 'huydeerpets_mason_discussion_answer', 'discussion_id', 'answer_id')
                 ->withTimestamps()
                 ->whereHas('field', function ($query) {
                     // Only load answers to fields that have not been deleted
@@ -45,8 +45,8 @@ class DiscussionAttributes implements ExtenderInterface
 
     public function serializer(GetApiRelationship $event)
     {
-        if ($event->isRelationship(DiscussionSerializer::class, 'flagrowMasonAnswers')) {
-            return $event->serializer->hasMany($event->model, AnswerSerializer::class, 'flagrowMasonAnswers');
+        if ($event->isRelationship(DiscussionSerializer::class, 'huydeerpetsMasonAnswers')) {
+            return $event->serializer->hasMany($event->model, AnswerSerializer::class, 'huydeerpetsMasonAnswers');
         }
     }
 
@@ -57,8 +57,8 @@ class DiscussionAttributes implements ExtenderInterface
             || $event->isController(CreateDiscussionController::class)
             || $event->isController(UpdateDiscussionController::class)) {
             $event->addInclude([
-                'flagrowMasonAnswers',
-                'flagrowMasonAnswers.field',
+                'huydeerpetsMasonAnswers',
+                'huydeerpetsMasonAnswers.field',
             ]);
         }
     }
@@ -66,7 +66,7 @@ class DiscussionAttributes implements ExtenderInterface
     public function attributes(Serializing $event)
     {
         if ($event->isSerializer(DiscussionSerializer::class)) {
-            $event->attributes['canUpdateFlagrowMasonAnswers'] = $event->actor->can('updateFlagrowMasonAnswers', $event->model);
+            $event->attributes['canUpdateHuydeerpetsMasonAnswers'] = $event->actor->can('updateHuydeerpetsMasonAnswers', $event->model);
         }
     }
 

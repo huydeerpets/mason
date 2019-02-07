@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagrow\Mason\Access;
+namespace Huydeerpets\Mason\Access;
 
 use Flarum\Discussion\Discussion;
 use Flarum\User\AbstractPolicy;
@@ -10,13 +10,13 @@ class DiscussionPolicy extends AbstractPolicy
 {
     protected $model = Discussion::class;
 
-    public function updateFlagrowMasonAnswers(User $actor, Discussion $discussion)
+    public function updateHuydeerpetsMasonAnswers(User $actor, Discussion $discussion)
     {
-        if ($actor->can('flagrow.mason.update-other-fields')) {
+        if ($actor->can('huydeerpets.mason.update-other-fields')) {
             return true;
         }
 
-        if ($actor->can('flagrow.mason.update-own-fields') && $discussion->user_id == $actor->id) {
+        if ($actor->can('huydeerpets.mason.update-own-fields') && $discussion->user_id == $actor->id) {
             return true;
         }
 

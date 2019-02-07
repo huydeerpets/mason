@@ -9,12 +9,12 @@ import addFieldsOnDiscussionHero from './addFieldsOnDiscussionHero';
 import addFieldsOnDiscussionPost from './addFieldsOnDiscussionPost';
 import patchModelIdentifier from "./patchModelIdentifier";
 
-app.initializers.add('flagrow-mason', app => {
-    app.store.models['flagrow-mason-field'] = Field;
-    app.store.models['flagrow-mason-answer'] = Answer;
+app.initializers.add('huydeerpets-mason', app => {
+    app.store.models['huydeerpets-mason-field'] = Field;
+    app.store.models['huydeerpets-mason-answer'] = Answer;
 
-    Discussion.prototype.flagrowMasonAnswers = Model.hasMany('flagrowMasonAnswers');
-    Discussion.prototype.canUpdateFlagrowMasonAnswers = Model.attribute('canUpdateFlagrowMasonAnswers');
+    Discussion.prototype.huydeerpetsMasonAnswers = Model.hasMany('huydeerpetsMasonAnswers');
+    Discussion.prototype.canUpdateHuydeerpetsMasonAnswers = Model.attribute('canUpdateHuydeerpetsMasonAnswers');
 
     addComposerFields();
     addFieldsOnDiscussionHero();

@@ -3,13 +3,13 @@ import DiscussionComposer from 'flarum/components/DiscussionComposer';
 import FieldsEditor from './components/FieldsEditor';
 
 export default function () {
-    DiscussionComposer.prototype.flagrowMasonAnswers = [];
+    DiscussionComposer.prototype.huydeerpetsMasonAnswers = [];
 
     extend(DiscussionComposer.prototype, 'headerItems', function (items) {
-        items.add('flagrow-mason-fields', FieldsEditor.component({
-            answers: this.flagrowMasonAnswers,
+        items.add('huydeerpets-mason-fields', FieldsEditor.component({
+            answers: this.huydeerpetsMasonAnswers,
             onchange: answers => {
-                this.flagrowMasonAnswers = answers;
+                this.huydeerpetsMasonAnswers = answers;
             },
             ontagchange: tags => {
                 this.tags = tags;
@@ -19,6 +19,6 @@ export default function () {
 
     extend(DiscussionComposer.prototype, 'data', function (data) {
         data.relationships = data.relationships || {};
-        data.relationships.flagrowMasonAnswers = this.flagrowMasonAnswers;
+        data.relationships.huydeerpetsMasonAnswers = this.huydeerpetsMasonAnswers;
     });
 }
