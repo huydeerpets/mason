@@ -41,5 +41,9 @@
         "psr-4": {
             "Huydeerpets\\Mason\\": "src/"
         }
-    }
+    },
+    "repositories": [{
+            "type": "path",
+            "url": "mason/*"
+        }]
 }
